@@ -33,8 +33,8 @@
 		    //Our model that we've created is named Photo, this library has an alias named Image, don't mix them two!
 		    //These parameters are related to the image processing class that we've included, not really related to Laravel
 		    Image::make(Config::get('Image.upload_folder').'/'.$fullname)
-		    	->resize(Config::get('Image.thumb_width', 'Image.thumb_height')
-		        ->save(Config::get('Image.thumb_folder').'/'.$fullname)
+		    	->resize(Config::get('Image.thumb_width', 'Image.thumb_height'))
+		        ->save(Config::get('Image.thumb_folder').'/'.$fullname);
 		    //If the file is not uploaded, we show an error message to the user, else we add a new column to the database and show the success message
 		    if($upload) {
 		    	//image is now uploaded, we first need to add column to the database
